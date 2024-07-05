@@ -1,3 +1,4 @@
+// Create a Stack with two methods push and pop.
 class Stack {
   constructor() {
     this.items = [];
