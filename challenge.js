@@ -1,39 +1,44 @@
-// Create a Stack with two methods push and pop.
-class Stack {
+//create a Queue with add and remove methods and ensure that calling remove on an empty queue returns -1
+
+class Queue {
   constructor() {
     this.items = [];
   }
 
-  push(number) {
+  add(number) {
     // your code here
     this.items.push(number);
   }
-
-  pop() {
+  
+  remove() {
     // your code here
-    if (this.items.length == 0) {
-      return "empty array";
+    if (this.items.length === 0) {
+      return -1;
     } else {
-      return this.items.pop();
+      return this.items.shift();
     }
   }
 }
 
-const stack = new Stack();
-stack.push(3);
-stack.push(5);
-console.log(stack.pop()); 
-// => 5
+const queue = new Queue();
 
-stack.push(2);
-stack.push(7);
-console.log(stack.pop()); 
-// => 7
-
-console.log(stack.pop()); 
-// => 2
-
-console.log(stack.pop()); 
+queue.add(3);
+queue.add(5);
+console.log(queue.remove()); 
 // => 3
 
-module.exports = Stack;
+queue.add(2);
+queue.add(7);
+console.log(queue.remove()); 
+// => 5
+
+console.log(queue.remove()); 
+// => 2
+
+console.log(queue.remove()); 
+// => 7
+
+console.log(queue.remove()); 
+// => -1
+
+module.exports = Queue;
